@@ -1,0 +1,61 @@
+<objects> 
+ <object Name="KinachVenomhound" Inherits="BaseDog">
+    <part Name="Render" ColorString="&amp;g^K" DetailColor="g" RenderString="d" Tile="creatures/sw_dog.bmp" DisplayName="{{g|Kinach the Venomhound}}" />
+    <stat Name="Level" Value="3" />
+	<part Name="Body" Anatomy="MutantVenomHoundQuadruped" />
+    <part Name="Brain" Hostile="false" />
+    <stat Name="Hitpoints" Value="22" />
+    <stat Name="Speed" Value="110" />
+    <stat Name="Strength" sValue="12" /> 
+	<stat Name="Ego" sValue="10" /> 
+	<stat Name="Agility" sValue="18" />
+	<stat Name="Toughness" sValue="20" />
+	<stat Name="Willpower" sValue="16" />
+	<stat Name="Intelligence" sValue="18" />
+	<tag Name="ExcludeFromDynamicEncounters" Value="*noinherit" />
+	<tag Name="Role" Value="Skirmisher" />
+	<stat Name="AV" Value="1" />
+	<stat Name="ColdResistance" Value="10" />
+    <stat Name="HeatResistance" Value="10" />
+	<part Name="AISelfPreservation" Threshold="75" />
+	<!--<mutation Name="Stinger" Level="1" /> -->
+	<tag Name="PrimaryLimbType" Value="Face" />
+	<part Name="Fetches" SniffChance = "40" SniffMessageChance = "10" /> <!-- SniffChance = 7 SniffMessageChance = 33 -->
+	<mutation Name="HeightenedHearing" Level="3" />
+	<mutation Name="HeightenedSmell" Level="4" />
+	<mutation Name="Regeneration" Level="2"/>
+	<mutation Name="AdrenalControl2" Level="2"/>
+	<mutation Name="DarkVision" Level="1" />
+	    <skill Name="Acrobatics" />
+    <skill Name="Acrobatics_SwiftReflexes" />
+	<skill Name="Endurance_Calloused" />
+	<skill Name="Endurance_PoisonTolerance" />
+	<skill Name="Endurance_Longstrider" />
+	<skill Name="Endurance_Swimming" />
+	<skill Name="Tactics" />
+	<skill Name="Tactics_Hurdle" />
+	<skill Name="Tactics_Charge" />
+    <skill Name="Tactics_Run" />
+	    <tag Name="Pet"/>
+    <tag Name="NoXP" />
+    <tag Name="StartingPet"/>
+    <part Name="Pettable" />
+	<part Name="EffectResistance" Values="Poison,PoisonGasPoison" />
+    <inventoryobject Blueprint="Venomhound_Bite" Number="1" />
+	<inventoryobject Blueprint="Venomhound_Claw" Number="2" />
+    <part Name="Description" Short="A mutanted varient of a hyrkhound with two lengths of sharp canine bone drip =pronouns.possessive= venomous/poisonous saliva." />
+  </object>
+  <object Name="Venomhound_Bite" Inherits="Bite">
+    <part Name="Render" DisplayName="{{G|venom-wet}} fangs" />
+    <part Name="MeleeWeapon" BaseDamage="1d2" />
+	<part Name="PoisonOnHit" Chance="75" />
+    <part Name="ElementalDamage" Damage="1d3" Attributes="Poison" />
+    <tag Name="Gender" Value="plural" />
+  </object>
+    <object Name="Venomhound_Claw" Inherits="NaturalWeapon">
+    <part Name="Render" DisplayName="claw" />
+	<part Name="PoisonOnHit" Chance="5" />
+    <part Name="MeleeWeapon" PenBonus="1" BaseDamage="1d2+1" Skill="ShortBlades" Stat="Agility" Slot="Foot" />
+	<part Name="ElementalDamage" Damage="1d2" Attributes="Poison" />
+  </object>  
+ </objects>
